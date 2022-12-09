@@ -84,7 +84,7 @@ variable "message_retention_seconds" {
 
 variable "principals_with_send_permission" {
   type        = list(string)
-  description = "The principal arns that are allowed to use sqs:SendMessage"
+  description = "The principal arns that are allowed to use sqs:SendMessage, needs to be \"*\" when source_arns is filled (sns sending a message to sqs)"
   default     = null
 }
 
@@ -92,6 +92,12 @@ variable "queue_name" {
   type        = string
   description = "The name of the queue. Queue names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 80 characters long. For a FIFO (first-in-first-out) queue, the name must end with the .fifo suffix. If omitted, Terraform will assign a random, unique name. Conflicts with name_prefix"
   default     = null
+}
+
+variable "source_arns" {
+  type        = list(string)
+  description = "The SNS topic arns that are allowed to use sqs:SendMessage, set principals_with_send_permission to \"*\" if this is set"
+  default     = []
 }
 
 variable "sqs_managed_sse_enabled" {

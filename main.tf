@@ -18,6 +18,14 @@ data "aws_iam_policy_document" "sqs_policy" {
       type        = "AWS"
     }
     resources = [try(aws_sqs_queue.kms_encrypted_queue[0].arn, aws_sqs_queue.queue[0].arn)]
+    dynamic "condition" {
+      for_each = length(var.source_arns) > 0 ? [1] : []
+      content {
+        test     = "ArnEquals"
+        values   = var.source_arns
+        variable = "aws:SourceArn"
+      }
+    }
   }
 }
 
