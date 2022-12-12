@@ -40,6 +40,16 @@ variable "alarm_topic_arn" {
   default     = null
 }
 
+variable "aws_account_id" {
+  type        = string
+  description = "AWS Account ID"
+}
+
+variable "aws_region" {
+  type        = string
+  description = "AWS Region"
+}
+
 variable "dead_letter_queue_arn" {
   type        = string
   description = "The dead letter queue arn"
