@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0](https://github.com/justtrackio/terraform-aws-sqs-queue/compare/v1.1.0...v1.2.0) (2022-12-12)
+
+
+### Features
+
+* Ensure principals_with_send_permission is optional ([#3](https://github.com/justtrackio/terraform-aws-sqs-queue/issues/3)) ([65873ff](https://github.com/justtrackio/terraform-aws-sqs-queue/commit/65873ff8f09e1b4ffeb4c61a9a69e3252533844e))
+
 ## [1.1.0](https://github.com/justtrackio/terraform-aws-sqs-queue/compare/v1.0.0...v1.1.0) (2022-12-12)
 
 
