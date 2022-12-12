@@ -1,6 +1,6 @@
 locals {
   alarm_description = <<EOF
-  SQS Queue Metrics: https://${data.aws_region.main.name}.console.aws.amazon.com/sqs/v2/home?region=${data.aws_region.main.name}#/queues/https%3A%2F%2Fsqs.${data.aws_region.main.name}.amazonaws.com%2F${data.aws_caller_identity.main.account_id}%2F${local.queue_name}
+  SQS Queue Metrics: https://${var.aws_region}.console.aws.amazon.com/sqs/v2/home?region=${var.aws_region}#/queues/https%3A%2F%2Fsqs.${var.aws_region}.amazonaws.com%2F${var.aws_account_id}%2F${local.queue_name}
 EOF
   redrive_policy = jsonencode({
     deadLetterTargetArn = var.dead_letter_queue_arn
@@ -10,6 +10,7 @@ EOF
 }
 
 data "aws_iam_policy_document" "sqs_policy" {
+  count = var.principals_with_send_permission != null ? 1 : 0
   statement {
     actions = ["sqs:SendMessage"]
     effect  = "Allow"
@@ -31,7 +32,7 @@ data "aws_iam_policy_document" "sqs_policy" {
 
 resource "aws_sqs_queue_policy" "policy" {
   count     = var.principals_with_send_permission != null ? 1 : 0
-  policy    = data.aws_iam_policy_document.sqs_policy.json
+  policy    = data.aws_iam_policy_document.sqs_policy[0].json
   queue_url = try(aws_sqs_queue.kms_encrypted_queue[0].url, aws_sqs_queue.queue[0].url)
 }
 
