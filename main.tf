@@ -143,8 +143,8 @@ resource "aws_cloudwatch_metric_alarm" "backlog" {
     return_data = true
   }
 
-  alarm_actions = [var.alarm_topic_arn]
-  ok_actions    = [var.alarm_topic_arn]
+  alarm_actions = var.alarm_topic_arn != null ? [var.alarm_topic_arn] : []
+  ok_actions    = var.alarm_topic_arn != null ? [var.alarm_topic_arn] : []
 
   tags = module.this.tags
 }
