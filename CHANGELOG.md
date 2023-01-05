@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.1](https://github.com/justtrackio/terraform-aws-sqs-queue/compare/v1.2.0...v1.2.1) (2023-01-05)
+
+
+### Bug Fixes
+
+* Empty alarm topic arn should be allowed ([#4](https://github.com/justtrackio/terraform-aws-sqs-queue/issues/4)) ([9af3391](https://github.com/justtrackio/terraform-aws-sqs-queue/commit/9af3391a2cd7975be20017547e93f7caf9479b0a))
+
 ## [1.2.0](https://github.com/justtrackio/terraform-aws-sqs-queue/compare/v1.1.0...v1.2.0) (2022-12-12)
 
 
