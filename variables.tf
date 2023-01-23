@@ -101,7 +101,7 @@ variable "principals_with_send_permission" {
 variable "queue_name" {
   type        = string
   description = "The name of the queue. Queue names must be made up of only uppercase and lowercase ASCII letters, numbers, underscores, and hyphens, and must be between 1 and 80 characters long. For a FIFO (first-in-first-out) queue, the name must end with the .fifo suffix. If omitted, Terraform will assign a random, unique name. Conflicts with name_prefix"
-  default     = null
+  default     = ""
 }
 
 variable "source_arns" {
