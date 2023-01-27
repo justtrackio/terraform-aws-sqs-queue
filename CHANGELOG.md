@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.3](https://github.com/justtrackio/terraform-aws-sqs-queue/compare/v1.2.2...v1.2.3) (2023-01-27)
+
+
+### Bug Fixes
+
+* lowered required terraform version ([#9](https://github.com/justtrackio/terraform-aws-sqs-queue/issues/9)) ([bf78b29](https://github.com/justtrackio/terraform-aws-sqs-queue/commit/bf78b29c0f5fbcbeef0cf26ef28b67e385056cd9))
+
 ## [1.2.2](https://github.com/justtrackio/terraform-aws-sqs-queue/compare/v1.2.1...v1.2.2) (2023-01-23)
 
 
