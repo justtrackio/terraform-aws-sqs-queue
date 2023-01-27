@@ -10,7 +10,7 @@ EOF
 }
 
 data "aws_iam_policy_document" "sqs_policy" {
-  count = var.principals_with_send_permission != null ? 1 : 0
+  count = module.this.enabled && var.principals_with_send_permission != null ? 1 : 0
   statement {
     actions = ["sqs:SendMessage"]
     effect  = "Allow"
@@ -31,13 +31,13 @@ data "aws_iam_policy_document" "sqs_policy" {
 }
 
 resource "aws_sqs_queue_policy" "policy" {
-  count     = var.principals_with_send_permission != null ? 1 : 0
+  count     = module.this.enabled && var.principals_with_send_permission != null ? 1 : 0
   policy    = data.aws_iam_policy_document.sqs_policy[0].json
   queue_url = try(aws_sqs_queue.kms_encrypted_queue[0].url, aws_sqs_queue.queue[0].url)
 }
 
 resource "aws_sqs_queue" "kms_encrypted_queue" {
-  count = var.kms_master_key_id != null ? 1 : 0
+  count = module.this.enabled && var.kms_master_key_id != null ? 1 : 0
   name  = local.queue_name
 
   fifo_queue                        = var.fifo_queue
@@ -52,7 +52,7 @@ resource "aws_sqs_queue" "kms_encrypted_queue" {
 }
 
 resource "aws_sqs_queue" "queue" {
-  count = var.kms_master_key_id != null ? 0 : 1
+  count = module.this.enabled && var.kms_master_key_id == null ? 1 : 0
   name  = local.queue_name
 
   fifo_queue                 = var.fifo_queue
@@ -66,7 +66,7 @@ resource "aws_sqs_queue" "queue" {
 }
 
 resource "aws_cloudwatch_metric_alarm" "backlog" {
-  count = var.alarm_create ? 1 : 0
+  count = module.this.enabled && var.alarm_create ? 1 : 0
 
   alarm_description   = local.alarm_description
   alarm_name          = "${module.alarm_label.id}-${var.queue_name}-backlog"
