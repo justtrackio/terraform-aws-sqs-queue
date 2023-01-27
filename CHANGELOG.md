@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0](https://github.com/justtrackio/terraform-aws-sqs-queue/compare/v1.2.3...v1.3.0) (2023-01-27)
+
+
+### Features
+
+* allow usage of enabled flag for resource creation ([#10](https://github.com/justtrackio/terraform-aws-sqs-queue/issues/10)) ([a10fa83](https://github.com/justtrackio/terraform-aws-sqs-queue/commit/a10fa8389ba0087211db7a0db945ec7e3fe6de37))
+
 ## [1.2.3](https://github.com/justtrackio/terraform-aws-sqs-queue/compare/v1.2.2...v1.2.3) (2023-01-27)
 
 
