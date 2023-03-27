@@ -14,5 +14,5 @@ module "example" {
   alarm_minutes                   = 5
   alarm_evaluation_periods        = 3
   alarm_period                    = 60
-  principals_with_send_permission = ["arn:aws:iam::123456789123:root"]
+  principals_with_send_permission = ["arn:aws:iam::999999999999:root"]
 }

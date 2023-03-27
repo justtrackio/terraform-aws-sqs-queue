@@ -15,5 +15,5 @@ module "example" {
   alarm_evaluation_periods        = 3
   alarm_period                    = 60
   principals_with_send_permission = ["*"]
-  source_arns                     = ["arn:aws:sns:eu-central-1:123456789123:myTopic"]
+  source_arns                     = ["arn:aws:sns:eu-central-1:999999999999:myTopic"]
 }
