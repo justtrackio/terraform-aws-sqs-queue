@@ -2,7 +2,7 @@ resource "aws_cloudwatch_metric_alarm" "backlog" {
   count = module.this.enabled && var.alarm_create ? 1 : 0
 
   alarm_description   = var.alarm_description
-  alarm_name          = "${module.this.id}-${var.queue_name}-backlog"
+  alarm_name          = "${local.queue_name}-backlog"
   comparison_operator = "GreaterThanThreshold"
   datapoints_to_alarm = var.alarm_datapoints_to_alarm
   evaluation_periods  = var.alarm_evaluation_periods
