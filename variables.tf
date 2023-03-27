@@ -10,6 +10,12 @@ variable "alarm_datapoints_to_alarm" {
   default     = null
 }
 
+variable "alarm_description" {
+  type        = string
+  description = "The description for the alarm"
+  default     = null
+}
+
 variable "alarm_evaluation_periods" {
   type        = number
   description = "The number of periods over which data is compared to the specified threshold."
@@ -38,16 +44,6 @@ variable "alarm_topic_arn" {
   type        = string
   description = "ARN of the SNS Topic used for notifying about alarm/ok messages."
   default     = null
-}
-
-variable "aws_account_id" {
-  type        = string
-  description = "AWS Account ID"
-}
-
-variable "aws_region" {
-  type        = string
-  description = "AWS Region"
 }
 
 variable "dead_letter_queue_arn" {
