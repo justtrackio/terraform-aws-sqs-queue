@@ -1,7 +1,10 @@
 resource "aws_cloudwatch_metric_alarm" "backlog" {
   count = module.this.enabled && var.alarm_create ? 1 : 0
 
-  alarm_description   = var.alarm_description
+  alarm_description = jsonencode(merge({
+    Severity    = "warning"
+    Description = var.alarm_description
+  }, module.this.tags, module.this.additional_tag_map))
   alarm_name          = "${local.queue_name}-backlog"
   comparison_operator = "GreaterThanThreshold"
   datapoints_to_alarm = var.alarm_datapoints_to_alarm
