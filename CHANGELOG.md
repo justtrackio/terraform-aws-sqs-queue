@@ -1,3 +1,10 @@
+## [1.4.0](https://github.com/justtrackio/terraform-aws-sqs-queue/compare/v1.3.0...v1.4.0) (2023-03-28)
+
+
+### Features
+
+* flexible_alarm_description ([#15](https://github.com/justtrackio/terraform-aws-sqs-queue/issues/15)) ([450bf3f](https://github.com/justtrackio/terraform-aws-sqs-queue/commit/450bf3fe408e271e7b1634c193ccaf29920282de))
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
