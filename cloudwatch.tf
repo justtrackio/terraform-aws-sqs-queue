@@ -1,9 +1,13 @@
+locals {
+  alarm_description = var.alarm_description != null ? var.alarm_description : "SQS Queue Metrics: https://${var.aws_region}.console.aws.amazon.com/sqs/v2/home?region=${var.aws_region}#/queues/https%3A%2F%2Fsqs.${var.aws_region}.amazonaws.com%2F${var.aws_account_id}%2F${local.queue_name}"
+}
+
 resource "aws_cloudwatch_metric_alarm" "backlog" {
   count = module.this.enabled && var.alarm_create ? 1 : 0
 
   alarm_description = jsonencode(merge({
     Severity    = "warning"
-    Description = var.alarm_description
+    Description = local.alarm_description
   }, module.this.tags, module.this.additional_tag_map))
   alarm_name          = "${local.queue_name}-backlog"
   comparison_operator = "GreaterThanThreshold"
