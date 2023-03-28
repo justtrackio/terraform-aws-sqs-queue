@@ -10,6 +10,12 @@ variable "alarm_datapoints_to_alarm" {
   default     = null
 }
 
+variable "alarm_description" {
+  type        = string
+  description = "The description for the alarm"
+  default     = null
+}
+
 variable "alarm_evaluation_periods" {
   type        = number
   description = "The number of periods over which data is compared to the specified threshold."
