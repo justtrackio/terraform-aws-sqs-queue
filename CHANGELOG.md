@@ -1,3 +1,10 @@
+## [1.5.0](https://github.com/justtrackio/terraform-aws-sqs-queue/compare/v1.4.0...v1.5.0) (2023-05-15)
+
+
+### Features
+
+* update_context_versions_variables_outputs ([#20](https://github.com/justtrackio/terraform-aws-sqs-queue/issues/20)) ([4f1e646](https://github.com/justtrackio/terraform-aws-sqs-queue/commit/4f1e6468c55468511cbbf1eb08e5e695764cfc04))
+
 ## [1.4.0](https://github.com/justtrackio/terraform-aws-sqs-queue/compare/v1.3.0...v1.4.0) (2023-03-28)
 
 
