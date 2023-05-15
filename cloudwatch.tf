@@ -1,5 +1,5 @@
 locals {
-  alarm_description = var.alarm_description != null ? var.alarm_description : "SQS Queue Metrics: https://${var.aws_region}.console.aws.amazon.com/sqs/v2/home?region=${var.aws_region}#/queues/https%3A%2F%2Fsqs.${var.aws_region}.amazonaws.com%2F${var.aws_account_id}%2F${local.queue_name}"
+  alarm_description = var.alarm_description != null ? var.alarm_description : "SQS Queue Metrics: https://${module.this.aws_region}.console.aws.amazon.com/sqs/v2/home?region=${module.this.aws_region}#/queues/https%3A%2F%2Fsqs.${module.this.aws_region}.amazonaws.com%2F${module.this.aws_account_id}%2F${local.queue_name}"
 }
 
 resource "aws_cloudwatch_metric_alarm" "backlog" {

@@ -46,16 +46,6 @@ variable "alarm_topic_arn" {
   default     = null
 }
 
-variable "aws_account_id" {
-  type        = string
-  description = "AWS Account ID"
-}
-
-variable "aws_region" {
-  type        = string
-  description = "AWS Region"
-}
-
 variable "dead_letter_queue_arn" {
   type        = string
   description = "The dead letter queue arn"
@@ -74,15 +64,15 @@ variable "fifo_queue" {
   default     = null
 }
 
-variable "kms_master_key_id" {
-  type        = string
-  description = "The ID of an AWS-managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see Key Terms."
-  default     = null
-}
-
 variable "kms_data_key_reuse_period_seconds" {
   type        = number
   description = "The length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling AWS KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). The default is 300 (5 minutes)."
+  default     = null
+}
+
+variable "kms_master_key_id" {
+  type        = string
+  description = "The ID of an AWS-managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see Key Terms."
   default     = null
 }
 
