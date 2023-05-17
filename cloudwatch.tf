@@ -3,7 +3,7 @@ locals {
 }
 
 resource "aws_cloudwatch_metric_alarm" "backlog" {
-  count = module.this.enabled && var.alarm_create ? 1 : 0
+  count = module.this.enabled && var.alarm_enabled ? 1 : 0
 
   alarm_description = jsonencode(merge({
     Severity    = "warning"

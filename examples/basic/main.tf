@@ -17,7 +17,7 @@ module "example" {
   aws_account_id                  = local.aws_account_id
   aws_region                      = local.aws_region
   queue_name                      = "myQueue"
-  alarm_create                    = true
+  alarm_enabled                   = true
   alarm_topic_arn                 = "arn:aws:sns:eu-central-1:${local.aws_account_id}:alarm"
   alarm_minutes                   = 5
   alarm_evaluation_periods        = 3
