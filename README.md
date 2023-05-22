@@ -36,9 +36,9 @@ Terraform module which creates sqs queue(s)
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_additional_tag_map"></a> [additional\_tag\_map](#input\_additional\_tag\_map) | Additional key-value pairs to add to each map in `tags_as_list_of_maps`. Not added to `tags` or `id`.<br>This is for some rare cases where resources want additional configuration of tags<br>and therefore take a list of maps with tag key, value, and additional configuration. | `map(string)` | `{}` | no |
-| <a name="input_alarm_create"></a> [alarm\_create](#input\_alarm\_create) | Defines if alarm should be created | `bool` | `false` | no |
 | <a name="input_alarm_datapoints_to_alarm"></a> [alarm\_datapoints\_to\_alarm](#input\_alarm\_datapoints\_to\_alarm) | The number of datapoints that must be breaching to trigger the alarm. | `number` | `null` | no |
 | <a name="input_alarm_description"></a> [alarm\_description](#input\_alarm\_description) | The description for the alarm | `string` | `null` | no |
+| <a name="input_alarm_enabled"></a> [alarm\_enabled](#input\_alarm\_enabled) | Defines if alarm should be created | `bool` | `false` | no |
 | <a name="input_alarm_evaluation_periods"></a> [alarm\_evaluation\_periods](#input\_alarm\_evaluation\_periods) | The number of periods over which data is compared to the specified threshold. | `number` | `null` | no |
 | <a name="input_alarm_minutes"></a> [alarm\_minutes](#input\_alarm\_minutes) | The backlog minutes | `number` | `null` | no |
 | <a name="input_alarm_period"></a> [alarm\_period](#input\_alarm\_period) | The period in seconds over which the specified statistic is applied. | `number` | `null` | no |
