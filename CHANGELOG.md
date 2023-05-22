@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/justtrackio/terraform-aws-sqs-queue/compare/v1.5.0...v1.5.1) (2023-05-22)
+
+
+### Bug Fixes
+
+* adjust alarm toggle variable ([#23](https://github.com/justtrackio/terraform-aws-sqs-queue/issues/23)) ([dcc9b5a](https://github.com/justtrackio/terraform-aws-sqs-queue/commit/dcc9b5a8cdc14dfa1a9d7e97e6a9371bd3aeb6e9))
+
 ## [1.5.0](https://github.com/justtrackio/terraform-aws-sqs-queue/compare/v1.4.0...v1.5.0) (2023-05-15)
 
 
