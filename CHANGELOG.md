@@ -1,3 +1,10 @@
+## [1.6.0](https://github.com/justtrackio/terraform-aws-sqs-queue/compare/v1.5.1...v1.6.0) (2025-09-01)
+
+
+### Features
+
+* add alarm topic arn convention ([#32](https://github.com/justtrackio/terraform-aws-sqs-queue/issues/32)) ([06c97b7](https://github.com/justtrackio/terraform-aws-sqs-queue/commit/06c97b798035a250afd69cb296e4722115bb2876))
+
 ## [1.5.1](https://github.com/justtrackio/terraform-aws-sqs-queue/compare/v1.5.0...v1.5.1) (2023-05-22)
 
 
